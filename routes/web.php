@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('shohan', function () {
+    return 'Hello World from shohan';
+});
