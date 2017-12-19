@@ -28,3 +28,7 @@ Route::get('admin/profile', function () {
 })->middleware('auth');
 
 Route::get('user/{id}', 'UserController@show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
