@@ -22,3 +22,9 @@ Route::get('shohan', function () {
 Route::get('/user', 'UserController@index');
 
 Route::redirect('/here', '/there', 301);
+
+Route::get('admin/profile', function () {
+    //
+})->middleware('auth');
+
+Route::get('user/{id}', 'UserController@show');
