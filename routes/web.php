@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('shohan', function () {
     return 'Hello World from shohan';
 });
+
+Route::get('/user', 'UserController@index');
+
+Route::redirect('/here', '/there', 301);
