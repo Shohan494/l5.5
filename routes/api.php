@@ -13,3 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
+/*
+	Buyer
+ */
+
+Route::resource("buyer", "Buyer\BuyerController", ["only" => ["index", "show"]]);

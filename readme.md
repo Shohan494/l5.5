@@ -11,3 +11,5 @@
 - create model and model with migrations when needed
 
 - create controllers
+
+- define routes
