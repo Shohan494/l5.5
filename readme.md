@@ -7,3 +7,5 @@
 - make sublime more powerfull with packages
 
 - understand the database entity relationship (the model of MVC)
+
+- create model
