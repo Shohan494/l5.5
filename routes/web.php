@@ -11,24 +11,3 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('shohan', function () {
-    return 'Hello World from shohan';
-});
-
-Route::get('/user', 'UserController@index');
-
-Route::redirect('/here', '/there', 301);
-
-Route::get('admin/profile', function () {
-    //
-})->middleware('auth');
-
-Route::get('user/{id}', 'UserController@show');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
