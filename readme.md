@@ -13,3 +13,5 @@
 - create controllers
 
 - define routes
+
+- create and design your model with clear understanding
