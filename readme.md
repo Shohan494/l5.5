@@ -8,4 +8,6 @@
 
 - understand the database entity relationship (the model of MVC)
 
-- create model and model with migrations
+- create model and model with migrations when needed
+
+- create controllers
