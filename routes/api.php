@@ -18,3 +18,11 @@ use Illuminate\Http\Request;
  */
 
 Route::resource("buyer", "Buyer\BuyerController", ["only" => ["index", "show"]]);
+
+Route::resource("seller", "Seller\SellerController", ["only" => ["index", "show"]]);
+
+Route::resource("catagory", "Catagory\CatagoryController", ["only" => ["index", "show"]]);
+
+Route::resource("transaction", "Transaction\TransactionController", ["only" => ["index", "show"]]);
+
+Route::resource("user", "User\UserController", ["only" => ["index", "show"]]);
