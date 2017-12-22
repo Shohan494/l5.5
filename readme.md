@@ -17,3 +17,5 @@
 - create and design your (model) with clear understanding
 
 - create and design your (model relationships) in model files
+
+- understanding rdbms of laravel
