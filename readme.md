@@ -6,7 +6,7 @@
 
 - make sublime more powerfull with packages
 
-- understand the database entity relationship (the model of MVC)
+- understanding the database entity relationship (which will be the model of MVC)
 
 - create model and model with migrations when needed
 
@@ -19,3 +19,5 @@
 - create and design your (model relationships) in model files
 
 - understanding rdbms of laravel
+
+- modifying the existing migrations of each model according to the needs
