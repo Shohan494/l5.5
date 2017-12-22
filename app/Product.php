@@ -3,12 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Catagory;
+use App\Seller;
+use App\Transaction;
 
 class Product extends Model
 {
-
-		const AVAILABLE_PRODUCT = "available";
-		const UNAVAILABLE_PRODUCT = "unavailable";
+	const AVAILABLE_PRODUCT = "available";
+	const UNAVAILABLE_PRODUCT = "unavailable";
 
     protected $fillable = [
     "name",
@@ -22,5 +24,21 @@ class Product extends Model
     public function isAvailable()
     {
     	return $this->status == Product::AVAILABLE_PRODUCT;
+    }
+
+    public function seller()
+    {
+        return $this->belongsTo(Seller::class);
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
+
+
+    public function catagories()
+    {
+        return $this->belongsToMany(Catagory::class);
     }
 }

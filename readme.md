@@ -14,4 +14,4 @@
 
 - define routes
 
-- create and design your model with clear understanding
+- create and design your (model) with clear understanding
