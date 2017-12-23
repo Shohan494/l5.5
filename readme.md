@@ -25,3 +25,5 @@
 - creating tables using the created or edited migration files
 
 - in terms of many to many extra table may needed to be created (here for catagory and product)
+
+- editing the factory files for data in the database table 
