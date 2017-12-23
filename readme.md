@@ -21,3 +21,5 @@
 - understanding rdbms of laravel
 
 - modifying the existing migrations of each model according to the needs
+
+- creating tables using the created or edited migration files
