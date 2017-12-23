@@ -23,3 +23,5 @@
 - modifying the existing migrations of each model according to the needs
 
 - creating tables using the created or edited migration files
+
+- in terms of many to many extra table may needed to be created (here for catagory and product)
