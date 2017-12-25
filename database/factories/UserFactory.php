@@ -62,9 +62,3 @@ $factory->define(Transaction::class, function (Faker $faker) {
 		    "product_id" => $seller->products->random()->id,
     ];
 });
-
-
-    "quantity",
-    "buyer_id",
-    "product_id"
-    ];
