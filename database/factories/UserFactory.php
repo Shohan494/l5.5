@@ -53,13 +53,12 @@ $factory->define(Product::class, function (Faker $faker) {
 });
 
 $factory->define(Transaction::class, function (Faker $faker) {
-
 	$seller = Seller::has('products')->get()->random();
 	$buyer = User::all()->except($seller->id)->random();
-
     return [
-		    "quantity" => $faker->numberBetween(1,3),
-		    "buyer_id" => $buyer->id,
-		    "product_id" => $seller->products->random()->id,
+        'quantity' => $faker->numberBetween(1, 3),
+        'buyer_id' => $buyer->id,
+        'product_id' => $seller->products->random()->id,
+        // User::inRandomOrder()->first()->id
     ];
 });
