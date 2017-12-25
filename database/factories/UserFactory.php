@@ -2,6 +2,7 @@
 
 use Faker\Generator as Faker;
 use App\User;
+use App\Catagory;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +26,21 @@ $factory->define(User::class, function (Faker $faker) {
         'verified' => $verified = $faker->randomElement([User::VERIFIED_USER,User::UNVERIFIED_USER]),
         'verification_token' => $verified == User::VERIFIED_USER ? null : User::generate_token(),
         'admin' => $verified = $faker->randomElement([User::ADMIN_USER,User::REGULAR_USER]),
+    ];
+});
+
+$factory->define(Catagory::class, function (Faker $faker) {
+
+    return [
+        'name' => $faker->word,
+        'description' => $faker->paragraph(1),
+    ];
+});
+
+$factory->define(Catagory::class, function (Faker $faker) {
+
+    return [
+        'name' => $faker->word,
+        'description' => $faker->paragraph(1),
     ];
 });
