@@ -19,8 +19,6 @@ class CatagoryProductTable extends Migration
 
             $table->foreign('catagory_id')->references('id')->on('catagories');
             $table->foreign('product_id')->references('id')->on('products');
-
-
         });
     }
 
