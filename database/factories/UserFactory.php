@@ -5,6 +5,7 @@ use App\User;
 use App\Catagory;
 use App\Product;
 use App\Transaction;
+use App\Seller;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +58,7 @@ $factory->define(Transaction::class, function (Faker $faker) {
 	$buyer = User::all()->except($seller->id)->random();
 
     return [
-		    "quantity" => $faker->number_between(1,3),
+		    "quantity" => $faker->numberBetween(1,3),
 		    "buyer_id" => $buyer->id,
 		    "product_id" => $seller->products->random()->id,
     ];
