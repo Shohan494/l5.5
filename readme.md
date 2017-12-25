@@ -29,3 +29,5 @@
 - editing the factory files for data in the database table
 
 - *** database seeder ***
+
+- most important, sellers table was not found, had to create protected var $table on users model
