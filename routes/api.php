@@ -25,4 +25,4 @@ Route::resource("catagory", "Catagory\CatagoryController", ["only" => ["index", 
 
 Route::resource("transaction", "Transaction\TransactionController", ["only" => ["index", "show"]]);
 
-Route::resource("user", "User\UserController", ["only" => ["index", "show", "store"]]);
+Route::resource("user", "User\UserController", ["only" => ["index", "show", "store", "update"]]);
