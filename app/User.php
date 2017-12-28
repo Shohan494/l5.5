@@ -19,6 +19,10 @@ class User extends Authenticatable
      *
      * @var array
      */
+    
+    // needed for the buyer seller extends user that's why
+    // *****************************************
+    // **********************************
     protected $table = 'users';
 
     protected $fillable = [
