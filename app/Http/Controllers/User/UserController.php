@@ -124,6 +124,6 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
         
-        return response()->json(['data' => $users], 200);
+        return response()->json(['data' => $user], 200);
     }
 }
