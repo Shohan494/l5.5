@@ -13,9 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-/*
-	Buyer
- */
+Route::resource("user", "User\UserController", ["except" => ["create", "edit"]]);
 
 Route::resource("buyer", "Buyer\BuyerController", ["only" => ["index", "show"]]);
 
@@ -27,4 +25,3 @@ Route::resource("transaction", "Transaction\TransactionController", ["only" => [
 
 
 
-Route::resource("user", "User\UserController", ["except" => ["create", "edit"]]);
