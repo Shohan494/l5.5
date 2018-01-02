@@ -45,6 +45,8 @@ class User extends Authenticatable
         'verification_token',
     ];
 
+
+
     public function setNameAttribute($name)
     {
         $this->attributes['name'] = strtolower($name);
@@ -64,6 +66,8 @@ class User extends Authenticatable
     {
         return ucwords($email);
     }
+
+
 
 
     public function isVerified()
