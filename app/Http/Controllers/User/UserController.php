@@ -98,14 +98,14 @@ class UserController extends ApiController
         {
             if(!$user->isVerified())
             {
-                return response()->json(['error' => 'user is not verified', 'code' => 409], 409); 
+                return $this->errorResponce('user is not verified', 409); 
             }
 
             $user->admin = $request->admin;
         }
         if(!$user->isDirty())
         {
-            return response()->json(['error' => 'specify different value to update', 'code' => 422], 422);
+            return $this->errorResponce('specify different value to update', 422);
             $user->admin = $request->admin;
         }
 
