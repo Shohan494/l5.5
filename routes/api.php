@@ -13,15 +13,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource("user", "User\UserController", ["except" => ["create", "edit"]]);
+Route::resource("users", "User\UserController", ["except" => ["create", "edit"]]);
 
-Route::resource("buyer", "Buyer\BuyerController", ["only" => ["index", "show"]]);
+Route::resource("buyers", "Buyer\BuyerController", ["only" => ["index", "show"]]);
 
-Route::resource("seller", "Seller\SellerController", ["only" => ["index", "show"]]);
+Route::resource("sellers", "Seller\SellerController", ["only" => ["index", "show"]]);
 
-Route::resource("catagory", "Catagory\CatagoryController", ["only" => ["index", "show"]]);
+Route::resource("catagories", "Catagory\CatagoryController", ["only" => ["index", "show"]]);
 
-Route::resource("transaction", "Transaction\TransactionController", ["only" => ["index", "show"]]);
+Route::resource("transactions", "Transaction\TransactionController", ["only" => ["index", "show"]]);
 
 
 
