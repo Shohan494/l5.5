@@ -8,6 +8,7 @@ use App\Traits\ApiResponcer;
 
 use Illuminate\Validation\ValidationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Auth\AuthenticationException;
 
 class Handler extends ExceptionHandler
 {
@@ -65,7 +66,17 @@ class Handler extends ExceptionHandler
             return $this->errorResponce("Does not exists any {$modelName} with the specified identificators", 404);
         }
 
+        if ($exception instanceof AuthenticationException)
+        {
+            return $this->unauthenticated($request, $exception);
+        }
+
         return parent::render($request, $exception);
+    }
+
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        return $this->errorResponse('Unauthenticated.', 401);
     }
 
 
