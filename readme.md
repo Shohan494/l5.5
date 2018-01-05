@@ -32,4 +32,4 @@
 
 - most important, sellers table was not found, had to create protected var $table on users model
 
-- *** handling errors using laravel handlers ***
+- *** handling errors using laravel handlers at app/Exceptions/Handler.php ***
