@@ -60,18 +60,18 @@ class CatagoryController extends ApiController
      */
     public function update(Request $request, Catagory $catagory)
     {
-        $category->fill($request->intersect([
+        $catagory->fill($request->only([
             'name',
             'description',
         ]));
 
-        if ($category->isClean()) {
-            return $this->errorResponse('You need to specify any different value to update', 422);
+        if (!$catagory->isDirty()) {
+            return $this->errorResponce('You need to specify any different value to update', 422);
         }
 
-        $category->save();
+        $catagory->save();
 
-        return $this->showOne($category);
+        return $this->showOne($catagory);
     }
 
     /**
