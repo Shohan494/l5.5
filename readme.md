@@ -30,7 +30,7 @@
 
 - *** database seeder ***
 
-- most important, sellers table was not found, had to create protected var $table on users model
+- most important, sellers table was not found, had to create protected var $table on User model
 
 - *** handling errors using laravel handlers at app/Exceptions/Handler.php ***
 
