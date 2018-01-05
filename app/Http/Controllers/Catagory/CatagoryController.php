@@ -28,7 +28,16 @@ class CatagoryController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'name' => 'required',
+            'description' => 'required',
+        ];
+
+        $this->validate($request, $rules);
+
+        $newCatagory = Catagory::create($request->all());
+
+        return $this->showOne($newCatagory, 201);
     }
 
     /**
@@ -39,7 +48,7 @@ class CatagoryController extends ApiController
      */
     public function show(Catagory $catagory)
     {
-        return $this->showOne($category);
+        return $this->showOne($catagory);
     }
 
     /**
