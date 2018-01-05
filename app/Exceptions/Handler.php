@@ -92,6 +92,12 @@ class Handler extends ExceptionHandler
             return $this->errorResponce('Method is not allowed or invalid', 405);
         }
 
+        // for the rest of the http excpetion
+        if ($exception instanceof HttpException)
+        {
+            return $this->errorResponce($exception->getMessage(), $exception->getStatusCode());
+        }
+
         return parent::render($request, $exception);
     }
 
