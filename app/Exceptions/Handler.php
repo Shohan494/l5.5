@@ -15,6 +15,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Illuminate\Database\QueryException;
 
 class Handler extends ExceptionHandler
 {
@@ -96,6 +97,12 @@ class Handler extends ExceptionHandler
         if ($exception instanceof HttpException)
         {
             return $this->errorResponce($exception->getMessage(), $exception->getStatusCode());
+        }
+
+        if ($exception instanceof QueryException)
+        {
+            dd($exception);
+            //return $this->errorResponce($exception->getMessage(), $exception->getStatusCode());
         }
 
         return parent::render($request, $exception);
