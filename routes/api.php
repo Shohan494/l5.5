@@ -19,7 +19,7 @@ Route::resource("buyers", "Buyer\BuyerController", ["only" => ["index", "show"]]
 
 Route::resource("sellers", "Seller\SellerController", ["only" => ["index", "show"]]);
 
-Route::resource("catagories", "Catagory\CatagoryController", ["only" => ["index", "show"]]);
+Route::resource("catagories", "Catagory\CatagoryController", ["except" => ["create", "edit"]]);
 
 Route::resource("transactions", "Transaction\TransactionController", ["only" => ["index", "show"]]);
 
