@@ -9,6 +9,9 @@ use App\Traits\ApiResponcer;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Auth\Access\AuthorizationException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -69,6 +72,16 @@ class Handler extends ExceptionHandler
         if ($exception instanceof AuthenticationException)
         {
             return $this->unauthenticated($request, $exception);
+        }
+
+        if ($exception instanceof AuthorizationException)
+        {
+            return $this->errorResponce($exception->getMessage(), 403);
+        }
+
+        if ($exception instanceof NotFoundHttpException)
+        {
+            return $this->errorResponce("URL not found", 404);
         }
 
         return parent::render($request, $exception);
