@@ -60,7 +60,18 @@ class CatagoryController extends ApiController
      */
     public function update(Request $request, Catagory $catagory)
     {
-        //
+        $category->fill($request->intersect([
+            'name',
+            'description',
+        ]));
+
+        if ($category->isClean()) {
+            return $this->errorResponse('You need to specify any different value to update', 422);
+        }
+
+        $category->save();
+
+        return $this->showOne($category);
     }
 
     /**
@@ -71,6 +82,7 @@ class CatagoryController extends ApiController
      */
     public function destroy(Catagory $catagory)
     {
-        //
+        $category->delete();
+        return $this->showOne($category);
     }
 }
