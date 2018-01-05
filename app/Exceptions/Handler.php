@@ -101,8 +101,8 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof QueryException)
         {
-            //get exception details
-            //dd($exception);
+            // get exception details
+            // dd($exception);
             
             $errorCode = $exception->errorInfo[1];
             
@@ -112,7 +112,13 @@ class Handler extends ExceptionHandler
             }
         }
 
-        return parent::render($request, $exception);
+        // doing this in our own way
+        // return parent::render($request, $exception);
+        if (config('app.debug')) {
+            return parent::render($request, $exception);            
+        }
+
+        return $this->errorResponse('Unexpected Exception. Try later', 500);
     }
 
     protected function unauthenticated($request, AuthenticationException $exception)
